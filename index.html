@@ -230,6 +230,10 @@ const FALLBACK_D={"PLAN_IMG":{},"PLANS":[{"name":"Basic Plan[C]","data":"300MB +
 // ===== 구글 시트 연결: 시트를 '웹에 게시(CSV)'한 주소 3개를 아래 따옴표 안에 붙여 넣으세요. 비워 두면 plans.json/내장 데이터를 씁니다 =====
 const SHEET={plans:'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4Nc62jS8h5C-VOQnzwlntf6wDuDS2ZhL5AEdLtNynbMqC2fE1DazAQxILGiFnNNgqvEmc-7AseUbQ/pub?gid=49608265&single=true&output=csv',banners:'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4Nc62jS8h5C-VOQnzwlntf6wDuDS2ZhL5AEdLtNynbMqC2fE1DazAQxILGiFnNNgqvEmc-7AseUbQ/pub?gid=426676588&single=true&output=csv',info:'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4Nc62jS8h5C-VOQnzwlntf6wDuDS2ZhL5AEdLtNynbMqC2fE1DazAQxILGiFnNNgqvEmc-7AseUbQ/pub?gid=1185072302&single=true&output=csv'};
 const LABEL_COLS={'선불':'pre','후불':'post','여권':'pass','외국인등록증':'arc','미성년자':'minor','5G':'5G','4G':'4G','약정':'yak','무약정':'nyak','삼성애플전용':'only','SK':'SK','KT':'KT','LG':'LG','SK알뜰':'SKa','KT알뜰':'KTa','LG알뜰':'LGa'};
+const normK=k=>String(k).toLowerCase().replace(/[\s_()\[\]\-\/·.]/g,'');
+const LABEL_N={};Object.keys(LABEL_COLS).forEach(k=>{LABEL_N[normK(k)]=LABEL_COLS[k]});
+['신분증','신분증arc','arc','외국인등록','외국인등록증arc','등록증'].forEach(k=>{LABEL_N[normK(k)]='arc'});
+['삼성아이폰전용','삼성아이폰','삼성애플','삼성아이폰만'].forEach(k=>{LABEL_N[normK(k)]='only'});
 const BG={'파랑':'linear-gradient(135deg,#2b4bff,#0fb6e6)','보라':'linear-gradient(135deg,#3b2bff,#7a5cff)','핑크':'linear-gradient(135deg,#f472b6,#ec4899)','주황':'linear-gradient(135deg,#f59e0b,#d97706)','초록':'linear-gradient(135deg,#84cc16,#65a30d)','남색':'linear-gradient(135deg,#1e3a8a,#0f172a)','빨강':'linear-gradient(135deg,#ef4444,#dc2626)'};
 function csv(t){const R=[];let r=[],c='',q=false;for(let i=0;i<t.length;i++){const h=t[i];if(q){if(h=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=h}else if(h=='"')q=true;else if(h==','){r.push(c);c=''}else if(h=='\n'||h=='\r'){if(h=='\r'&&t[i+1]=='\n')i++;r.push(c);c='';R.push(r);r=[]}else c+=h}
  if(c!==''||r.length){r.push(c);R.push(r)}const H=(R.shift()||[]).map(x=>x.trim());return R.filter(x=>x.some(v=>v.trim())).map(x=>Object.fromEntries(H.map((k,i)=>[k,(x[i]||'').trim()])))}
@@ -239,7 +243,7 @@ const toNum=v=>parseInt(String(v).replace(/[^0-9]/g,''),10)||0;
 const unl=v=>/무제한|unl/i.test(v)?'unl':v;
 const NL=[['ko','안내(ko)'],['en','안내(en)'],['vi','안내(vi)'],['my','안내(my)'],['uz','안내(uz)'],['mn','안내(mn)']];
 function buildPlans(rows){return rows.filter(shown).filter(o=>o['이름']).map(o=>{const note={};NL.forEach(([l,k])=>{if(o[k])note[l]=o[k]});
- return{name:o['이름'],price:toNum(o['가격']),data:unl(o['데이터'])==='unl'?'무제한':o['데이터'],call:unl(o['통화']),sms:unl(o['문자']),hot:o['핫스팟(GB)']?toNum(o['핫스팟(GB)']):null,contract:o['약정내용'],speed:(v=>v?(/^[\d.]+$/.test(v)?v+'Mbps':v):undefined)(String(o['무제한속도(Mbps)']||o['무제한속도']||'').trim()),tags:Object.keys(LABEL_COLS).filter(k=>isOn(o[k])).map(k=>LABEL_COLS[k]),note}})}
+ return{name:o['이름'],price:toNum(o['가격']),data:unl(o['데이터'])==='unl'?'무제한':o['데이터'],call:unl(o['통화']),sms:unl(o['문자']),hot:o['핫스팟(GB)']?toNum(o['핫스팟(GB)']):null,contract:o['약정내용'],speed:(v=>v?(/^[\d.]+$/.test(v)?v+'Mbps':v):undefined)(String(o['무제한속도(Mbps)']||o['무제한속도']||'').trim()),tags:[...new Set(Object.keys(o).filter(k=>isOn(o[k])).map(k=>LABEL_N[normK(k)]).filter(Boolean))],note}})}
 function promoUrl(u){const m=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);return m?'https://drive.google.com/thumbnail?id='+m[1]+'&sz=w1600':u}
 function buildBanners(rows){return rows.filter(shown).filter(o=>o['제목(ko)']||o['이미지주소']).map(o=>({t:o['제목(ko)'],s:o['부제(ko)'],bg:BG[o['색상']]||BG['파랑'],en:[o['제목(en)']||o['제목(ko)'],o['부제(en)']||o['부제(ko)']],img:o['이미지주소']||undefined,promo:String(o['홍보물주소']||'').split(/[\s|]+/).filter(Boolean).map(promoUrl)}))}
 function buildInfo(rows){const I={};['ko','en','vi','my','uz','mn'].forEach(l=>{const a=rows.filter(shown).map(o=>o[l]).filter(Boolean);if(a.length)I[l]=a});return I}
