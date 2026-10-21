@@ -206,7 +206,8 @@
     {
       "k": "dev",
       "o": [
-        "only"
+        "only",
+        "all"
       ]
     },
     {
@@ -243,7 +244,7 @@
       "car": "통신사",
       "pre": "선불",
       "post": "후불",
-      "arc": "외국인 등록증",
+      "arc": "신분증(ARC)",
       "pass": "여권",
       "plans": "요금제",
       "empty": "조건에 맞는 요금제가 없어요",
@@ -272,7 +273,8 @@
       "evn": "진행 중인 이벤트가 없어요",
       "fh": "고객 유형에 맞는 상품 서비스를 추천해드립니다.",
       "fh2": "추천",
-      "h0": "알뜰폰&선불폰"
+      "h0": "알뜰폰&선불폰&유심",
+      "all": "All devices"
     },
     "en": {
       "h1": "A <em>trusted</em> company for international students",
@@ -315,7 +317,8 @@
       "evn": "No events right now",
       "fh": "We recommend plans that fit your customer type.",
       "fh2": "Recommended",
-      "h0": "Prepaid&MVNO"
+      "h0": "Prepaid&MVNO&SIM",
+      "all": "All devices"
     },
     "vi": {
       "h1": "Doanh nghiệp <em>đáng tin cậy</em> dành cho du học sinh",
@@ -355,7 +358,8 @@
       "evn": "Hiện chưa có sự kiện",
       "fh": "Chúng tôi đề xuất gói cước phù hợp với loại khách hàng của bạn.",
       "fh2": "Đề xuất",
-      "h0": "Trả trước&MVNO"
+      "h0": "Trả trước&MVNO&SIM",
+      "all": "All devices"
     },
     "my": {
       "h1": "နိုင်ငံတကာကျောင်းသားများအတွက် <em>ယုံကြည်စိတ်ချရသော</em> ကုမ္ပဏီ",
@@ -395,7 +399,8 @@
       "evn": "လက်ရှိ ပွဲများ မရှိသေးပါ",
       "fh": "သင့်ဖောက်သည်အမျိုးအစားနှင့် ကိုက်ညီသော ဝန်ဆောင်မှုများကို အကြံပြုပေးပါသည်။",
       "fh2": "အကြံပြု",
-      "h0": "ကြိုတင်ငွေဖြည့်&MVNO"
+      "h0": "ကြိုတင်ငွေဖြည့်&MVNO&SIM",
+      "all": "All devices"
     },
     "uz": {
       "h1": "Xalqaro talabalar uchun <em>ishonchli</em> kompaniya",
@@ -435,7 +440,8 @@
       "evn": "Hozircha aksiyalar yo'q",
       "fh": "Mijoz turingizga mos xizmatlarni tavsiya qilamiz.",
       "fh2": "Tavsiya",
-      "h0": "Oldindan to'lov&MVNO"
+      "h0": "Oldindan to'lov&MVNO&SIM",
+      "all": "All devices"
     },
     "mn": {
       "h1": "Гадаад оюутнуудад зориулсан <em>найдвартай</em> компани",
@@ -475,7 +481,8 @@
       "evn": "Одоогоор үйл явдал алга",
       "fh": "Таны хэрэглэгчийн төрөлд тохирсон үйлчилгээг санал болгоно.",
       "fh2": "Санал",
-      "h0": "Урьдчилсан төлбөр&MVNO"
+      "h0": "Урьдчилсан төлбөр&MVNO&SIM",
+      "all": "All devices"
     }
   }
 }
