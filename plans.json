@@ -318,7 +318,7 @@
       "evn": "No events right now",
       "fh": "We recommend plans that fit your customer type.",
       "fh2": "Recommended",
-      "h0": "Prepaid&MVNO&SIM",
+      "h0": "Prepaid&Cheap SIM",
       "all": "All devices",
       "hna": "Not available"
     },
@@ -360,7 +360,7 @@
       "evn": "Hiện chưa có sự kiện",
       "fh": "Chúng tôi đề xuất gói cước phù hợp với loại khách hàng của bạn.",
       "fh2": "Đề xuất",
-      "h0": "Trả trước&MVNO&SIM",
+      "h0": "Trả trước&SIM giá rẻ",
       "all": "All devices",
       "hna": "Không hỗ trợ"
     },
@@ -402,7 +402,7 @@
       "evn": "လက်ရှိ ပွဲများ မရှိသေးပါ",
       "fh": "သင့်ဖောက်သည်အမျိုးအစားနှင့် ကိုက်ညီသော ဝန်ဆောင်မှုများကို အကြံပြုပေးပါသည်။",
       "fh2": "အကြံပြု",
-      "h0": "ကြိုတင်ငွေဖြည့်&MVNO&SIM",
+      "h0": "ကြိုတင်ငွေဖြည့်&စျေးသက်သာသော SIM",
       "all": "All devices",
       "hna": "မရနိုင်ပါ"
     },
@@ -444,7 +444,7 @@
       "evn": "Hozircha aksiyalar yo'q",
       "fh": "Mijoz turingizga mos xizmatlarni tavsiya qilamiz.",
       "fh2": "Tavsiya",
-      "h0": "Oldindan to'lov&MVNO&SIM",
+      "h0": "Oldindan to'lov&Arzon SIM",
       "all": "All devices",
       "hna": "Mavjud emas"
     },
@@ -486,7 +486,7 @@
       "evn": "Одоогоор үйл явдал алга",
       "fh": "Таны хэрэглэгчийн төрөлд тохирсон үйлчилгээг санал болгоно.",
       "fh2": "Санал",
-      "h0": "Урьдчилсан төлбөр&MVNO&SIM",
+      "h0": "Урьдчилсан төлбөр&Хямд SIM",
       "all": "All devices",
       "hna": "Боломжгүй"
     }
