@@ -186,7 +186,8 @@
       "o": [
         "pass",
         "arc",
-        "minor"
+        "minor",
+        "fo"
       ]
     },
     {
@@ -275,7 +276,8 @@
       "fh2": "추천",
       "h0": "알뜰폰&선불폰&유심",
       "all": "모든 기기",
-      "hna": "불가"
+      "hna": "불가",
+      "fo": "외국인전용"
     },
     "en": {
       "h1": "A <em>trusted</em> company for international students",
@@ -320,7 +322,8 @@
       "fh2": "Recommended",
       "h0": "Prepaid&Cheap SIM",
       "all": "All devices",
-      "hna": "Not available"
+      "hna": "Not available",
+      "fo": "Foreigners only"
     },
     "vi": {
       "h1": "Doanh nghiệp <em>đáng tin cậy</em> dành cho du học sinh",
@@ -362,7 +365,8 @@
       "fh2": "Đề xuất",
       "h0": "Trả trước&SIM giá rẻ",
       "all": "All devices",
-      "hna": "Không hỗ trợ"
+      "hna": "Không hỗ trợ",
+      "fo": "Chỉ dành cho người nước ngoài"
     },
     "my": {
       "h1": "နိုင်ငံတကာကျောင်းသားများအတွက် <em>ယုံကြည်စိတ်ချရသော</em> ကုမ္ပဏီ",
@@ -404,7 +408,8 @@
       "fh2": "အကြံပြု",
       "h0": "ကြိုတင်ငွေဖြည့်&စျေးသက်သာသော SIM",
       "all": "All devices",
-      "hna": "မရနိုင်ပါ"
+      "hna": "မရနိုင်ပါ",
+      "fo": "နိုင်ငံခြားသားများသီးသန့်"
     },
     "uz": {
       "h1": "Xalqaro talabalar uchun <em>ishonchli</em> kompaniya",
@@ -446,7 +451,8 @@
       "fh2": "Tavsiya",
       "h0": "Oldindan to'lov&Arzon SIM",
       "all": "All devices",
-      "hna": "Mavjud emas"
+      "hna": "Mavjud emas",
+      "fo": "Faqat chet elliklar uchun"
     },
     "mn": {
       "h1": "Гадаад оюутнуудад зориулсан <em>найдвартай</em> компани",
@@ -488,7 +494,8 @@
       "fh2": "Санал",
       "h0": "Урьдчилсан төлбөр&Хямд SIM",
       "all": "All devices",
-      "hna": "Боломжгүй"
+      "hna": "Боломжгүй",
+      "fo": "Зөвхөн гадаадынханд"
     }
   }
 }
